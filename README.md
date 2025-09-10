@@ -3,7 +3,7 @@
 Уровень: Beginner
 Тип: CLI
 Технологии: C#, .NET9
-Источник задания: (NumberGuessingGame)[https://github.com/Alexander-Yurtaev/NumberGuessingGame]
+Источник задания: (NumberGuessingGame)[https://roadmap.sh/projects/number-guessing-game]
 Статус: завершён
 
 
@@ -47,7 +47,7 @@ Congratulations! You guessed the correct number in 4 attempts.
 Level: Beginner
 Type: CLI
 Technology: C#, .NET9
-Source: (NumberGuessingGame)[https://github.com/Alexander-Yurtaev/NumberGuessingGame]
+Source: (NumberGuessingGame)[https://roadmap.sh/projects/number-guessing-game]
 Stage: Done
 
 
