@@ -1,7 +1,4 @@
-﻿using System.Numerics;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace NumberGuessingGame.Cli;
+﻿namespace NumberGuessingGame.Cli;
 
 public class Program
 {
