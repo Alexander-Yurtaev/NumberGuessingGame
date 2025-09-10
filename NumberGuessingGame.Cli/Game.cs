@@ -2,6 +2,7 @@
 
 public class Game
 {
+    private readonly IRandomNumberGenerator _numberGenerator;
     private GameLevel _level;
     private DateTime _startDate;
     private DateTime? _finishDate;
@@ -17,12 +18,17 @@ public class Game
     public bool IsStarted { get; private set; }
     public Result CheckNumberResult { get; private set; }
 
+    public Game(IRandomNumberGenerator numberGenerator)
+    {
+        _numberGenerator = numberGenerator;
+    }
+
     public void Start(GameLevel level)
     {
         _level = level;
         _startDate = DateTime.Now;
         _finishDate = null;
-        _hiddenNumber = GetRandomInteger();
+        _hiddenNumber = _numberGenerator.GetRandomInteger();
         _currentChance = 0;
         IsStarted = true;
         CheckNumberResult = Result.Less;
@@ -53,6 +59,11 @@ public class Game
         {
             CheckNumberResult = Result.Less;
         }
+
+        if (!HasNextChance())
+        {
+            Stop();
+        }
     }
 
     public bool HasNextChance()
@@ -69,10 +80,5 @@ public class Game
         }
 
         return TimeSpan.Zero;
-    }
-
-    private static int GetRandomInteger()
-    {
-        return Random.Shared.Next(1, 100);
     }
 }

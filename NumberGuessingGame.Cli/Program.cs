@@ -4,7 +4,7 @@ public class Program
 {
     static void Main()
     {
-        var game = new Game();
+        var game = new Game(new RandomNumberGenerator());
 
         PrintGreeting((int)game.Level);
         Console.WriteLine();
@@ -46,7 +46,7 @@ public class Program
                     break;
             }
 
-            if (game.HasNextChance()) continue;
+            if (game.IsStarted) continue;
 
             if (game.CheckNumberResult != Result.Correct)
             {
