@@ -25,6 +25,8 @@ public class Game
 
     public void Start(GameLevel level)
     {
+        if (IsStarted) return;
+
         _level = level;
         _startDate = DateTime.Now;
         _finishDate = null;
